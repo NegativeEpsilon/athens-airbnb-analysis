@@ -32,7 +32,7 @@ A few patterns stand out:
 
 ```text
 .
-├── Airbnb_Athens_Analysis_Portfolio.ipynb
+├── Airbnb_Athens_Analysis.ipynb
 ├── requirements.txt
 └── data/
     └── raw/
