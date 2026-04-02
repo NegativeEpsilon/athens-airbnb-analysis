@@ -2,12 +2,15 @@
 
 This project explores Airbnb listings in Athens, Greece, with a focus on price formation, neighborhood concentration, host behavior, review activity, and listing availability.
 
+The goal was to build a first end-to-end data science project: clean a real dataset, explore the market structure, engineer a small set of interpretable features, and test whether a simple regression model can explain Airbnb pricing patterns in Athens.
+
 The notebook follows a compact end-to-end workflow:
 - data loading and cleaning
 - exploratory data analysis
 - feature engineering
 - baseline linear regression
 - model evaluation and diagnostics
+
 
 ## Main questions
 
@@ -20,13 +23,13 @@ The analysis focuses on a few practical questions:
 
 ## Main findings
 
-A few patterns stand out:
+The analysis points to a few clear patterns:
 
-- Airbnb supply is highly concentrated in central Athens, especially around the Acropolis and nearby tourist areas.
-- Room type and location are the strongest price drivers in the dataset.
-- Entire homes command clearly higher prices than private or shared rooms.
-- Reviews, availability, and host scale show weaker relationships with price.
-- A baseline linear regression captures part of the pricing structure, but a large share of variation remains unexplained.
+- Airbnb supply is highly concentrated in central Athens, especially around the Acropolis and nearby tourist districts.
+- Room type and neighborhood are the strongest drivers of price.
+- Entire homes/apartments are consistently more expensive than private or shared rooms.
+- Reviews, availability, and host scale show weaker relationships with price than location and property type.
+- A baseline linear regression explains part of the variation in price, but much of the market remains shaped by factors not captured in the dataset.
 
 ## Repository structure
 
@@ -69,7 +72,7 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
-5. Open `Airbnb_Athens_Analysis_Portfolio.ipynb` and run the notebook from top to bottom.
+5. Open `Airbnb_Athens_Analysis.ipynb` and run the notebook from top to bottom.
 
 ## Notes
 
@@ -77,8 +80,20 @@ jupyter notebook
 - The model section uses both scikit-learn (baseline regression) and statsmodels (OLS summary and diagnostics).
 - The dataset represents a snapshot of the Athens Airbnb market and should not be interpreted as a current market forecast.
 
+## Limitations
+
+This project is exploratory and uses a relatively small set of features for modeling.  
+The regression should be read as an interpretable baseline rather than a production forecasting model.
+
+A few limitations are important:
+
+- the dataset is a snapshot of the market rather than a time series
+- some important pricing variables are missing (for example amenities, property size, exact distances, and host history)
+- location is simplified into neighborhood labels and clusters rather than richer spatial features
+
 ## Possible next steps
 
-- Compare linear regression with Ridge or Lasso.
-- Test non-linear models such as Random Forest or Gradient Boosting.
-- Add richer location features, such as distances to landmarks or transit stations.
+- Compare the baseline regression with Ridge or Lasso.
+- Add richer spatial features, such as distance to landmarks or metro stations.
+- Test a non-linear model to capture effects the linear baseline misses.
+- Turn selected notebook findings into a short presentation style summary.
